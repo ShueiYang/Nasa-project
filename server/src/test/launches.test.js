@@ -1,10 +1,10 @@
 const path = require('path');
-require('dotenv').config({path: path.resolve(__dirname, '../../../.env')});
+require('dotenv').config({path: path.resolve(__dirname, '../../.env')});
 
 const request = require('supertest');
-const app = require('../../app');
-const { mongoConnect, mongoDisconnect } = require('../../services/mongo.js');
-const { loadPlanetsData } = require('../../models/planets.model');
+const app = require('../app');
+const { mongoConnect, mongoDisconnect } = require('../services/mongo.js');
+const { loadPlanetsData } = require('../models/planets.model');
 
 describe('Launch API', () => {
     beforeAll(async ()=> {
