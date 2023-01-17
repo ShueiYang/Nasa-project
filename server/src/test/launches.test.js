@@ -13,15 +13,14 @@ describe('Launch API', () => {
     });
     afterAll(async ()=>{
         await mongoDisconnect();  
-    })
+    });
 
     describe('Test GET/launches', () => {
         test('it should respond with 200 success', async () => {
-            const response = await request(app)
+            await request(app)
                 .get('/v1/launches')
                 .expect('Content-Type', /json/)
                 .expect(200); 
-            // expect (response.statusCode).toBe(200);
         })
     });
 
@@ -83,4 +82,3 @@ describe('Launch API', () => {
         })
     })  
 });
-
